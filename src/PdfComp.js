@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Document, Page } from "react-pdf";
-import pdf from "./1.pdf";
 
 function PdfComp(props) {
   const [numPages, setNumPages] = useState();
@@ -22,8 +21,8 @@ function PdfComp(props) {
             return (
               <Page
                 pageNumber={page}
-                renderTextLayer={false}
-                renderAnnotationLayer={false}
+                renderTextLayer={true}
+                renderAnnotationLayer={true}
               />
             );
           })}

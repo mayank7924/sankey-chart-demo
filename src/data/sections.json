@@ -1,0 +1,22 @@
+[
+  {
+    "id": "section1",
+    "title": "Section 1",
+    "color": "#216fed"
+  },
+  {
+    "id": "section2",
+    "title": "Section 2",
+    "color": "#fcba03"
+  },
+  {
+    "id": "section3",
+    "title": "Section 3",
+    "color": "#1fab38"
+  },
+  {
+    "id": "section4",
+    "title": "Section 4",
+    "color": "#ed2121"
+  }
+]

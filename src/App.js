@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { pdfjs } from "react-pdf";
 import PdfComp from "./PdfComp";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.js",
-  import.meta.url
-).toString();
 
 function App() {
   const [title, setTitle] = useState("");
@@ -45,10 +42,42 @@ function App() {
   };
   const showPdf = (pdf) => {
     // window.open(`http://localhost:5000/files/${pdf}`, "_blank", "noreferrer");
-    setPdfFile(`http://localhost:5000/files/${pdf}`)
+    setPdfFile(
+      `https://themodernfirm.com/wp-content/uploads/2017/12/Sample-Fillable-PDF.pdf`
+    );
+  };
+  const getObjectData = () => {
+    var myData = "";
+    var object = document.getElementById("pdf-file");
+    console.log(object);
+    //get data inside object data
+    var myData = object.contentDocument;
+
+    alert("myData => " + myData + " <= myData");
   };
   return (
     <div className="App">
+      <iframe
+        title="pdf"
+        src="https://themodernfirm.com/wp-content/uploads/2017/12/Sample-Fillable-PDF.pdf"
+        style={{ width: "600px", height: "500px" }}
+        frameborder="0"
+      ></iframe>
+      <object
+        id="pdf-file"
+        data="https://themodernfirm.com/wp-content/uploads/2017/12/Sample-Fillable-PDF.pdf"
+        type="application/pdf"
+        width="100%"
+        height="1000px"
+      >
+        <p>
+          Alternative text - include a link{" "}
+          <a href="https://themodernfirm.com/wp-content/uploads/2017/12/Sample-Fillable-PDF.pdf">
+            to the PDF!
+          </a>
+        </p>
+      </object>
+      <button onClick={getObjectData}>Get Object Data</button>
       <form className="formStyle" onSubmit={submitImage}>
         <h4>Upload Pdf in React</h4>
         <br />
@@ -92,7 +121,7 @@ function App() {
               })}
         </div>
       </div>
-      <PdfComp pdfFile={pdfFile}/>
+      <PdfComp pdfFile={pdfFile} />
     </div>
   );
 }
