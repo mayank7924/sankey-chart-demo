@@ -54,12 +54,12 @@ const data0 = {
     {
       index: 8,
       name: "BNP Paribas Bank",
-      amount: "171M AED",
+      amount: "80M AED",
     },
     {
       index: 9,
       name: "Barclays Bank",
-      amount: "171M AED",
+      amount: "200k AED",
     },
     {
       index: 10,
@@ -157,22 +157,22 @@ const data0 = {
     {
       source: 8,
       target: 10,
-      value: 3500,
+      value: 10500,
     },
     {
       source: 8,
       target: 11,
-      value: 1500,
+      value: 13500,
     },
     {
       source: 8,
       target: 12,
-      value: 1500,
+      value: 4500,
     },
     {
       source: 8,
       target: 13,
-      value: 1500,
+      value: 2500,
     },
     {
       source: 8,
